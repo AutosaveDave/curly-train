@@ -17,15 +17,15 @@ const UserSchema = newSchema(
             // Mongoose matching validation here
         },
 
-        thoughts: {
-            type: [Schema.Types.ObjectId],
+        thoughts: [ {
+            type: Schema.Types.ObjectId,
             ref: "Thought",
-        }
+        } ],
 
-        friends: {
-            type: [Schema.Types.ObjectId],
+        friends: [ {
+            type: Schema.Types.ObjectId,
             ref: "Thought",
-        }
+        } ],
 
     }
 )
