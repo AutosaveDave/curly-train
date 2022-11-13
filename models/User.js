@@ -1,5 +1,5 @@
-const { Schema, model } = require('mongoose');
-const thoughtSchema = require("./Assignment");
+const { Schema, model } = require("mongoose");
+const thoughtSchema = require("./Thought");
 
 const UserSchema = newSchema(
     {
@@ -19,13 +19,20 @@ const UserSchema = newSchema(
 
         thoughts: [ {
             type: Schema.Types.ObjectId,
-            ref: "Thought",
+            ref: "thought",
         } ],
 
         friends: [ {
             type: Schema.Types.ObjectId,
-            ref: "Thought",
+            ref: "thought",
         } ],
 
+
+
     }
-)
+);
+
+// Virtual here
+
+const User=model("user", userSchema);
+module.exports=User;
